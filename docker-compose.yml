@@ -1,0 +1,18 @@
+version: '2'
+services:
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.servernode
+    container_name: Servernode
+    command: npm run start
+    ports:
+      - '3000:3000'
+    volumes:
+     - ./frontend:/app
+    environment:
+      NODE_ENV: development
+    command: |
+      npm install 
+      npm start
