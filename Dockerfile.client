@@ -1,0 +1,24 @@
+FROM node:alpine
+MAINTAINER Your Name
+
+ENV Client /Client
+RUN mkdir $Client
+WORKDIR $Client
+
+RUN npm install -g webpack
+RUN npm install -g nodemon
+
+# ADD package.json $Client/
+
+# ENV NODE_ENV=production \
+#  PATH=$Client/node_modules/.bin:$PATH
+
+RUN npm install
+
+# ADD . $Client
+
+# Write the bundle.js static asset file
+# RUN npm run build
+
+# Boot the server
+# CMD ["npm", "start"]

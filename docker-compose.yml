@@ -1,7 +1,7 @@
 version: '2'
 services:
 
-  frontend:
+  server:
     build:
       context: .
       dockerfile: Dockerfile.servernode
@@ -13,3 +13,17 @@ services:
      - ./Server:/app
     environment:
       NODE_ENV: development
+
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    container_name: Client
+    command: npm start
+    ports:
+      - '3000:3000'
+    volumes:
+     - ./Client:/app
+    environment:
+      NODE_ENV: development
+
