@@ -1,29 +1,29 @@
-version: '2'
+version: '3.1'
 services:
-
   server:
     build:
       context: .
       dockerfile: Dockerfile.servernode
     container_name: Servernode
-    command: npm start
     ports:
       - '5000:5000'
     volumes:
-     - ./Server:/app
+     - ./server:/app
     environment:
       NODE_ENV: development
+    command: npm start
 
-  client:
+  web:
     build:
       context: .
       dockerfile: Dockerfile.client
-    container_name: Client
-    command: npm start
+    container_name: ClientNode
     ports:
       - '3000:3000'
     volumes:
-     - ./Client:/app
+     - ./client:/app
     environment:
       NODE_ENV: development
+    command: npm start
+
 

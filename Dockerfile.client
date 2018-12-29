@@ -1,21 +1,21 @@
 FROM node:alpine
 MAINTAINER Your Name
 
-ENV Client /Client
-RUN mkdir $Client
-WORKDIR $Client
+ENV APP_HOME /app
+RUN mkdir $APP_HOME
+WORKDIR $APP_HOME
 
-RUN npm install -g webpack
-RUN npm install -g nodemon
-
-# ADD package.json $Client/
-
-# ENV NODE_ENV=production \
-#  PATH=$Client/node_modules/.bin:$PATH
-
+COPY ./client/package.json $APP_HOME/
+RUN cat package.json
 RUN npm install
+RUN npm install -g webpack
 
-# ADD . $Client
+
+ENV NODE_ENV=production \
+# PATH=$APP_HOME/node_modules/.bin:$PATH
+
+
+# ADD . $APP_HOME
 
 # Write the bundle.js static asset file
 # RUN npm run build
