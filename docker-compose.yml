@@ -12,6 +12,8 @@ services:
     environment:
       NODE_ENV: development
     command: npm start
+    links:
+      - mysql
 
   web:
     build:
@@ -33,10 +35,10 @@ services:
     command: |
       --default-authentication-plugin=mysql_native_password
     environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: 'isylzjkoot'
       MYSQL_DATABASE: 'db'
       MYSQL_USER: 'root'
-      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: 'isylzjkoot'
     ports:
       - "3306:3306"
     volumes:

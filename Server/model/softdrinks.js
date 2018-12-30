@@ -1,5 +1,5 @@
 export default (sequelize, DataTypes) => {
-	const Menus = sequelize.define('menus', {
+	const softDrinks = sequelize.define('softdrinks', {
 		id: {
 			type: DataTypes.INTEGER(10).UNSIGNED,
 			autoIncrement: true,
@@ -14,6 +14,10 @@ export default (sequelize, DataTypes) => {
 			type: DataTypes.DECIMAL(10, 2),
 			field: 'price',
 		},
+		quetity: {
+			type: DataTypes.DECIMAL(10, 2),
+			field: 'quetity',
+		},
 		createdAt: {
 			field: 'created_at',
 			type: DataTypes.DATE,
@@ -24,5 +28,5 @@ export default (sequelize, DataTypes) => {
 		},
 	})
 
-	return Menus
+	return softDrinks
 }
