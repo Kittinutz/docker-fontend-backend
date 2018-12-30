@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon --experimental-modules index.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,8 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
+    "mysql2": "^1.6.4",
     "nodemon": "^1.18.9",
     "npm": "^6.5.0",
+    "sequelize": "^4.42.0",
     "start": "^5.1.0"
   }
 }
