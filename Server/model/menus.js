@@ -1,5 +1,5 @@
 export default (sequelize, DataTypes) => {
-	const Menus = sequelize.define('menus', {
+	const Foods = sequelize.define('Foods', {
 		id: {
 			type: DataTypes.INTEGER(10).UNSIGNED,
 			autoIncrement: true,
@@ -8,21 +8,21 @@ export default (sequelize, DataTypes) => {
 		},
 		name: {
 			type: DataTypes.STRING,
-			field: 'name',
+			field: 'itemName',
 		},
 		price: {
 			type: DataTypes.DECIMAL(10, 2),
 			field: 'price',
 		},
 		createdAt: {
-			field: 'created_at',
+			field: 'createdAt',
 			type: DataTypes.DATE,
 		},
 		updatedAt: {
-			field: 'updated_at',
+			field: 'updatedAt',
 			type: DataTypes.DATE,
 		},
 	})
 
-	return Menus
+	return Foods
 }
