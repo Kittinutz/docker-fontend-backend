@@ -1,5 +1,5 @@
 export default (sequelize, DataTypes) => {
-	const Menus = sequelize.define('menus', {
+	const coffes = sequelize.define('coffes', {
 		id: {
 			type: DataTypes.INTEGER(10).UNSIGNED,
 			autoIncrement: true,
@@ -24,5 +24,5 @@ export default (sequelize, DataTypes) => {
 		},
 	})
 
-	return Menus
+	return coffes
 }
