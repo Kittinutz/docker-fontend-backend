@@ -4,8 +4,4 @@ const NotFoundPage = ({staticContext = {} })=>{
   staticContext.notFound = true;
   return <h1> Oooops, 404 not found</h1>
 }
-export default {
-  component: NotFoundPage,
-  
-  
-}
+export default NotFoundPage

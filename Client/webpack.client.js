@@ -11,9 +11,7 @@ const config = {
     output: {
         filename: "bundle.js",
         path: path.resolve(__dirname, 'public'), //client src public naja
-
-    }
-
-
+        chunkFilename: '[name].[chunkhash].js'
+    },
 };
 module.exports = merge(baseConfig,config);
