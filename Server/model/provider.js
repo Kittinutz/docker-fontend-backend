@@ -7,7 +7,14 @@ import BeersModal from '../model/beers'
 import CoffeModal from '../model/coffes'
 /* relation ship */
 
-export const Menus = MenusModal(sequelize, Sequelize)
-export const SoftDrinks = SoftDrinkModal(sequelize, Sequelize)
-export const Coffes = CoffeModal(sequelize, Sequelize)
-export const Beers = BeersModal(sequelize, Sequelize)
+const Menus = MenusModal(sequelize, Sequelize)
+const SoftDrinks = SoftDrinkModal(sequelize, Sequelize)
+const Coffes = CoffeModal(sequelize, Sequelize)
+const Beers = BeersModal(sequelize, Sequelize)
+
+export default {
+	Menus,
+	SoftDrinks,
+	Coffes,
+	Beers
+}
