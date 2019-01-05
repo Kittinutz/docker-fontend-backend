@@ -1,8 +1,12 @@
 import express from 'express'
-import { Menus } from './model/provider'
+import {
+	Menus,
+	SoftDrinks,
+	Coffes,
+	Beers
+} from './model/provider'
 const app = express()
 
-/*eslint no-console: ["error", { allow: ["warn", "error"] }] */
 
 app.listen(5000, () => {
 	console.log('Server listent on port : 5000')
