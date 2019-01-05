@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "model:init": "node_modules/.bin/sequelize init",
     "model:migrate": "node_modules/.bin/sequelize db:migrate",
-    "model:seedall":"node_modules/.bin/sequelize db:seed:all",
+    "model:seedall": "node_modules/.bin/sequelize db:seed:all",
     "createmodel": "npm-run-all --parallel createmodel:*",
     "createmodel:Beer": "node_modules/.bin/sequelize model:generate --name Alcohols --attributes itemName:string,price:integer,quetity:integer",
     "createmodel:Coffee": "node_modules/.bin/sequelize model:generate --name Cofees --attributes itemName:string,price:integer ",
@@ -30,7 +30,12 @@
     "start": "^5.1.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
     "eslint": "^5.11.1",
     "eslint-config-airbnb-base": "^13.1.0",
