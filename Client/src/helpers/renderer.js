@@ -43,11 +43,8 @@ export default (req, store, context) => {
            <script>
               window.INITIAL_STATE = ${serialize(store.getState())};
            </script>
-           ${bundles.map(bundle => {
-            return `<script src="${bundle.file}"></script>`
-            // alternatively if you are using publicPath option in webpack config
-            // you can use the publicPath value from bundle, e.g:
-            // return `<script src="${bundle.publicPath}"></script>`
+           ${scripts.map(script => {
+            return `<script src="${script.file}"></script>`
           }).join('\n')}
       </body>
   </html>

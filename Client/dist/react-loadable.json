@@ -3,8 +3,8 @@
     {
       "id": 8,
       "name": "./src/client/pages/MenueListPage.js",
-      "file": "0.bundle.js",
-      "publicPath": "0.bundle.js"
+      "file": "0.d40e77cf0fb395b952af.js",
+      "publicPath": "0.d40e77cf0fb395b952af.js"
     }
   ],
   "undefined": [
@@ -117,18 +117,18 @@
       "publicPath": "bundle.js"
     }
   ],
-  "./pages/HomePage": [
+  "../actions/index": [
     {
       "id": 1,
-      "name": "./src/client/pages/HomePage.js",
+      "name": "./src/client/actions/index.js",
       "file": "bundle.js",
       "publicPath": "bundle.js"
     }
   ],
-  "../actions/index": [
+  "./pages/HomePage": [
     {
       "id": 2,
-      "name": "./src/client/actions/index.js",
+      "name": "./src/client/pages/HomePage.js",
       "file": "bundle.js",
       "publicPath": "bundle.js"
     }
