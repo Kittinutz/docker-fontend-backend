@@ -20,8 +20,15 @@ const Dynamicimport = pageName => Loadable({
   loading() {
     return <div>Loading...</div>
   },
+  // modules: [`./pages/${pageName}`],
+  // webpack: () => [require.resolveWeak(`./pages/${pageName}`)],
   modules: [`./pages/${pageName}`],
   webpack: () => [require.resolveWeak(`./pages/${pageName}`)],
+  render: (loaded,props) => {
+    console.log('props',props)
+    let Component = loaded.default
+    return <Component/>;
+  }
 });
 import HomePage from './pages/HomePage';
 import UsersListPage, {loadData} from './pages/UsersListPage';

@@ -43,7 +43,7 @@ app.get('*', (req, res) => {
       // .catch(()=>{
       //   res.send('Something went wrong');
       // });
-      //not recommanded
+      // not recommanded
   
 });
 Loadable.preloadAll().then(() => {

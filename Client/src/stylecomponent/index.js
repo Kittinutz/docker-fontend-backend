@@ -1,10 +1,10 @@
 
-import styled, { css } from 'styled-components';
+import styled from 'styled-components'
 export const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
   color: palevioletred;
-`;
+`
 export const HeaderContainer = styled.div`
   display:flex;
   height: 100%;
@@ -54,7 +54,7 @@ export const HeaderContainer = styled.div`
 @-o-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
-} `;
+} `
 export const HeaderWrapper = styled.div`
   display:flex;
   background-color:rgba(0,0,0,0.1);
@@ -65,4 +65,4 @@ export const HeaderWrapper = styled.div`
   z-index:1;
   right:0;
   top:0;
-  `;
+  `

@@ -10,13 +10,12 @@ import {Helmet} from 'react-helmet';
 import Loadable from 'react-loadable'
 import { getBundles } from 'react-loadable/webpack';
 import stats from '../../dist/react-loadable.json';
+
 export default (req, store, context) => {
-  let bundles = getBundles(stats, modules);
-  let scripts = bundles.filter(bundle => bundle.file.endsWith('.js'));
+  
   let modules = []
   const content = renderToString(
   <Loadable.Capture report={moduleName => modules.push(moduleName)}>
-    
     <Provider store={store}>
       <StaticRouter location={req.path} context={context}>
         <div>{renderRoutes(Routes)}</div>
@@ -24,10 +23,10 @@ export default (req, store, context) => {
       </StaticRouter>
     </Provider>
   </Loadable.Capture>
-
   );
-  console.log(modules)
   const helmet = Helmet.renderStatic()
+  let bundles = getBundles(stats, modules);
+  let scripts = bundles.filter(bundle => bundle.file.endsWith('.js'));
   const test =  
   `
   <!DOCTYPE html>
@@ -44,9 +43,11 @@ export default (req, store, context) => {
            <script>
               window.INITIAL_STATE = ${serialize(store.getState())};
            </script>
-           <script src="bundle.js" ></script>
-           ${scripts.map(script => {
-            return `<script src="${script.file}"></script>`
+           ${bundles.map(bundle => {
+            return `<script src="${bundle.file}"></script>`
+            // alternatively if you are using publicPath option in webpack config
+            // you can use the publicPath value from bundle, e.g:
+            // return `<script src="${bundle.publicPath}"></script>`
           }).join('\n')}
       </body>
   </html>

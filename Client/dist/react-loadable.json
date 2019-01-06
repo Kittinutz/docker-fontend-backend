@@ -117,7 +117,7 @@
       "publicPath": "bundle.js"
     }
   ],
-  "../client/pages/HomePage": [
+  "./pages/HomePage": [
     {
       "id": 1,
       "name": "./src/client/pages/HomePage.js",
