@@ -11,7 +11,7 @@ import {Provider} from 'react-redux';
 import {renderRoutes} from 'react-router-config';
 import axios from 'axios';
 import reducers from './reducers';
-
+import Loadable from 'react-loadable';
 const axiosInstance = axios.create(
   {
     baseURL:'/api'
@@ -23,7 +23,7 @@ const store = createStore(
     applyMiddleware(thunk.withExtraArgument(axiosInstance))
 );
 
-
+Loadable.preloadReady().then(() => {
 ReactDOM.hydrate(
     <Provider store={store}>
         <BrowserRouter>
@@ -31,3 +31,4 @@ ReactDOM.hydrate(
         </BrowserRouter>
     </Provider>
     , document.querySelector('#root'));
+})

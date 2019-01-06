@@ -5,6 +5,7 @@ import Routes from './client/routes';
 import renderer from './helpers/renderer';
 import Proxy from 'express-http-proxy'
 import createStore from './helpers/createStore';
+import Loadable from 'react-loadable';
 
 const app = express();
 
@@ -42,10 +43,11 @@ app.get('*', (req, res) => {
       // .catch(()=>{
       //   res.send('Something went wrong');
       // });
-      //not recommanded
+      // not recommanded
   
 });
-
-app.listen(3000, () => {
-    console.log('listen server side render  on port 3000');
+Loadable.preloadAll().then(() => {
+  app.listen(3000, () => {
+      console.log('listen server side render  on port 3000');
+  });
 });

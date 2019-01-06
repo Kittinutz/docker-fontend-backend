@@ -15,3 +15,4 @@ export const getMenus = async (req,res) => {
 	}
 return	res.send(JSON.stringify(menus))
 }
+

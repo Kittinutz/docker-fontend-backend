@@ -26,8 +26,6 @@ function mapStateToProps({admins}) {
     admins
   }
 }
-export default {
-  component:connect(mapStateToProps,{fetchAdmins})(
-    requireAuth(AdminsListPage)),
-  loadData:({dispatch})=>dispatch(fetchAdmins())
-}
+const loadDataFetchAdmins = ({dispatch})=>dispatch(fetchAdmins())
+export default connect(mapStateToProps,{fetchAdmins})(
+  requireAuth(AdminsListPage))
