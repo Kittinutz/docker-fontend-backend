@@ -31,12 +31,13 @@ export default (req, store, context) => {
   `
   <!DOCTYPE html>
   <html>
+   <meta charset="utf-8" >
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Rabbitmansion</title>
        <head>
        ${helmet.title.toString()}
        ${helmet.meta.toString()}
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+       <link rel='stylesheet' href='http://cdn.bootcss.com/antd/2.9.3/antd.css' />
        </head>
         <body>
            <div id="root">${content}</div>
