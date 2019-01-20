@@ -2,21 +2,22 @@
 import React from 'react';
 import App from './App';
 import Loadable from 'react-loadable';
-import {fetchAdmins} from './actions';
+import { fetchAdmins } from './actions';
 
 const Dynamicimport = pageName => Loadable({
   loader: () => import(`./pages/${pageName}`),
   loading() {
     return <div>Loading...</div>
   },
+  modules: [`${pageName}`]
 });
 
 import HomePage from './pages/HomePage';
-import UsersListPage, {loadData} from './pages/UsersListPage';
+import UsersListPage, { loadData } from './pages/UsersListPage';
 import NotFoundPage from './pages/NotFoundPage'
-import AdminsListPage,{ loadDatafetchAdmins }  from  './pages/AdminsListPage'
+import AdminsListPage, { loadDatafetchAdmins } from './pages/AdminsListPage'
 
-const loadDataFetchAdmins = ({dispatch})=>dispatch(fetchAdmins())
+const loadDataFetchAdmins = ({ dispatch }) => dispatch(fetchAdmins())
 
 export default [
   {
@@ -28,15 +29,15 @@ export default [
         exact: true
       },
       {
-        component:Dynamicimport('AdminsListPage'),
-        loadData:loadDatafetchAdmins,
-        path:'/admins'
-        
+        component: Dynamicimport('AdminsListPage'),
+        loadData: loadDatafetchAdmins,
+        path: '/admins'
+
       },
       {
         ...UsersListPage,
         path: '/users',
-        
+
       },
       {
         component: Dynamicimport('NotFoundPage')
@@ -44,7 +45,7 @@ export default [
     ]
   },
   {
-  
+
   }
 ];
 

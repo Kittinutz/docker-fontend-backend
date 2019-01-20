@@ -14,4 +14,4 @@ const config = {
 		chunkFilename: '[name].[chunkhash].js'
 	},
 }
-module.exports = merge(baseConfig,config)
+module.exports = merge(baseConfig, config)

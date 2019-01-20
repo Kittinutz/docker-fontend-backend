@@ -1,7 +1,7 @@
-const  loadable  = require('react-loadable/webpack')
+const loadable = require('react-loadable/webpack')
 
 module.exports = {
-//tell webpack run babel on every file it runs through
+	//tell webpack run babel on every file it runs through
 	module: {
 		rules: [
 			{
@@ -13,7 +13,7 @@ module.exports = {
 					presets: [
 						'react',
 						'stage-0',
-						['env', {target: {browsers: ['last 2 versions']}}]
+						['env', { target: { browsers: ['last 2 versions'] } }]
 					],
 				},
 			},
